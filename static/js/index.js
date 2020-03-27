@@ -22,12 +22,12 @@ class LikeButton extends React.Component {
 class TitleBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value : 'タイトル' };
-        this.handleChange = this.handleChange.bind(this)
+        this.state = { value : '' };
+        this.handleChange = this.handleChange.bind(this);
     };
 
-    handleChange (title) {
-        this.setState({ value : title.target.value })
+    handleChange (event) {
+        this.setState({ value : event.target.value })
     };
 
     render() {
@@ -41,13 +41,54 @@ class TitleBox extends React.Component {
                     'input',
                     {
                         value : this.state.value,
-                        onChange : this.handleChange
+                        onChange : this.handleChange,
+                        placeholder : 'タイトル',
+                        className : 'editor-titlebox__title__input'
                     }
                 )
             ),
             e(
                 'div',
                 { className : 'editor-titlebox__title__preview' },
+                this.state.value
+            )
+        )
+    };
+};
+
+class MainBox extends React.Component  {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value :  ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+    };
+
+    handleChange (event) {
+        this.setState({ value : event.target.value });
+    };
+
+    render() {
+        return e(
+            'div',
+            null,
+            e(
+                'div',
+                { className : 'editor-main__dropzone' },
+                e(
+                    'textarea',
+                    {
+                        value : this.state.value,
+                        onChange : this.handleChange,
+                        placeholder : '本文を入力してください',
+                        className : 'editor-main__dropzone__textarea'
+                    }
+                )
+            ),
+            e(
+                'div',
+                { className  : 'editor-main__dropzone__preview' },
                 this.state.value
             )
         )
@@ -61,4 +102,9 @@ ReactDOM.render(e(LikeButton), domContainer);
 ReactDOM.render(
     e(TitleBox),
     document.getElementById('editor-titlebox')
+)
+
+ReactDOM.render(
+    e(MainBox),
+    document.getElementById('editor-main')
 )
