@@ -1,2 +1,3 @@
-# flask-react
+# franck
 Flask-react
+Named by James Franck
