@@ -1,0 +1,15 @@
+.editor-titlebox {
+    height: 2rem;
+    width: 90%;
+    margin: 0 auto;
+}
+.editor-titlebox__title {
+    height: 90%;
+    width: 50%;
+    float: left;
+}
+.editor-titlebox__title__preview {
+    height: 90%;
+    width: 50%;
+    float: right;
+}
