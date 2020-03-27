@@ -31,28 +31,24 @@ class TitleBox extends React.Component {
     };
 
     render() {
-        //return (
-        //    <div>
-        //        <p>
-        //            { this.state.value }
-        //        </p>
-        //        <input value={ this.state.value } onChange={ this.handleChange } />
-        //    </div>
-        //)
         return e(
             'div',
             null,
             e(
-                'p',
-                null,
-                this.state.value
+                'div',
+                { className : 'editor-titlebox__title' },
+                e(
+                    'input',
+                    {
+                        value : this.state.value,
+                        onChange : this.handleChange
+                    }
+                )
             ),
             e(
-                'input',
-                {
-                    value : this.state.value,
-                    onChange : this.handleChange
-                }
+                'div',
+                { className : 'editor-titlebox__title__preview' },
+                this.state.value
             )
         )
     };
@@ -62,11 +58,7 @@ class TitleBox extends React.Component {
 const domContainer = document.querySelector('#root');
 ReactDOM.render(e(LikeButton), domContainer);
 
-//ReactDOM.render(
-//    <TitleBox />,
-//    document.getElementsByClassName('editor-titlebox__title')
-//)
 ReactDOM.render(
     e(TitleBox),
-    document.getElementById('editor-titlebox__title')
+    document.getElementById('editor-titlebox')
 )
