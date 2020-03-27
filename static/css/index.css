@@ -1,5 +1,5 @@
 .editor-titlebox {
-    height: 2rem;
+    height: 5rem;
     width: 90%;
     margin: 0 auto;
 }
@@ -8,8 +8,36 @@
     width: 50%;
     float: left;
 }
+.editor-titlebox__title__input {
+    height: 100%;
+    width: 95%;
+    background-color: #f4f4f4;
+    font-size: 15px;
+}
 .editor-titlebox__title__preview {
+    height: 95%;
+    width: 50%;
+    float: right;
+    font-size: 18px;
+}
+.editor-main {
+    height: 100rem;
+    width: 90%;
+    margin: 0  auto;
+}
+.editor-main__dropzone {
+    height: 30rem;
+    width: 50%;
+    float: left;
+}
+.editor-main__dropzone__preview {
     height: 90%;
     width: 50%;
     float: right;
+    font-size: 10px
+}
+.editor-main__dropzone__textarea {
+    height: 100%;
+    width: 95%;
+    background-color: #f4f4f4
 }
